@@ -5,7 +5,7 @@ import java.util.List;
 import javax.persistence.OrderBy;
 
 import com.coll.model.Blog;
-
+import com.coll.model.*;
 public interface BlogDAO {
 
 	public boolean addBlog(Blog blog);

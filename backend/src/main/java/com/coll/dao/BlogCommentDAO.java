@@ -3,7 +3,7 @@ package com.coll.dao;
 import java.util.List;
 
 import com.coll.model.BlogComment;
-
+import com.coll.model.*;
 public interface BlogCommentDAO {
 	public BlogComment getBlogComment(int commentId);
 

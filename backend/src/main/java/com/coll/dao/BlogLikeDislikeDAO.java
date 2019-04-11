@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.coll.model.BlogDislike;
 import com.coll.model.BlogLike;
-
+import com.coll.model.*;
 public interface BlogLikeDislikeDAO 
 {
 
