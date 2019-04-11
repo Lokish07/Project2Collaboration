@@ -15,8 +15,13 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.coll.model.Blog;
 import com.coll.model.BlogComment;
+import com.coll.model.BlogDislike;
 import com.coll.model.BlogLike;
 import com.coll.model.Forum;
+import com.coll.model.ForumComment;
+import com.coll.model.Friend;
+import com.coll.model.Job;
+import com.coll.model.UserDetail;
 
 @Configuration
 @ComponentScan("com.coll")
@@ -43,12 +48,16 @@ public class DbConfig {
 		LocalSessionFactoryBuilder factoryBuilder = new LocalSessionFactoryBuilder(getDataSource());
 		factoryBuilder.addProperties(hibernateProp);
 
-		
-		factoryBuilder.addAnnotatedClass(BlogComment.class);
-		factoryBuilder.addAnnotatedClass(BlogLike.class);
-		factoryBuilder.addAnnotatedClass(Forum.class);
 		factoryBuilder.addAnnotatedClass(Blog.class);
-
+		factoryBuilder.addAnnotatedClass(UserDetail.class);
+		factoryBuilder.addAnnotatedClass(BlogComment.class);
+		factoryBuilder.addAnnotatedClass(Job.class);
+		factoryBuilder.addAnnotatedClass(Forum.class);
+		factoryBuilder.addAnnotatedClass(ForumComment.class);
+		factoryBuilder.addAnnotatedClass(BlogLike.class);
+		factoryBuilder.addAnnotatedClass(BlogDislike.class);
+		//factoryBuilder.addAnnotatedClass(ProfilePic.class);
+		factoryBuilder.addAnnotatedClass(Friend.class);
 
 		
 
