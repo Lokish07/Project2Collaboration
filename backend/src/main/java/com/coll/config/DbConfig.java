@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.coll.model.Blog;
 
 @Configuration
-@ComponentScan("com.niit")
+@ComponentScan("com.coll")
 @EnableTransactionManagement
 public class DbConfig {
 

@@ -18,7 +18,7 @@ public class ForumCommentTestCase {
 	@BeforeClass
 	public static void executeFirst() {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
-		context.scan("com.niit");
+		context.scan("com.coll");
 		context.refresh();
 		forumCommentDAO = (ForumCommentDAO) context.getBean("forumCommentDAO");
 	}

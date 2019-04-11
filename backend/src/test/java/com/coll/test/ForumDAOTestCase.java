@@ -20,7 +20,7 @@ public class ForumDAOTestCase {
 	public static void executeFirst()
 	{
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
-		context.scan("com.niit");
+		context.scan("com.coll");
 		context.refresh();
 		forumDAO = (ForumDAO) context.getBean("forumDAO");
 	}
