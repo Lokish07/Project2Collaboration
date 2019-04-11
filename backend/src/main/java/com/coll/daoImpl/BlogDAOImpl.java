@@ -79,6 +79,7 @@ public class BlogDAOImpl implements BlogDAO {
 	@Override
 	public List<Blog> getBlogList() {
 		Session session = sessionFactory.openSession();
+		
 		Query query = session.createQuery("from Blog");
 		List<Blog> blogList = query.list();
 		session.close();

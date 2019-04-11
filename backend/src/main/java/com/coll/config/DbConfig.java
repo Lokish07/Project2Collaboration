@@ -14,6 +14,9 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.coll.model.Blog;
+import com.coll.model.BlogComment;
+import com.coll.model.BlogLike;
+import com.coll.model.Forum;
 
 @Configuration
 @ComponentScan("com.coll")
@@ -40,7 +43,13 @@ public class DbConfig {
 		LocalSessionFactoryBuilder factoryBuilder = new LocalSessionFactoryBuilder(getDataSource());
 		factoryBuilder.addProperties(hibernateProp);
 
+		
+		factoryBuilder.addAnnotatedClass(BlogComment.class);
+		factoryBuilder.addAnnotatedClass(BlogLike.class);
+		factoryBuilder.addAnnotatedClass(Forum.class);
 		factoryBuilder.addAnnotatedClass(Blog.class);
+
+
 		
 
 		SessionFactory sessionFactory = factoryBuilder.buildSessionFactory();
