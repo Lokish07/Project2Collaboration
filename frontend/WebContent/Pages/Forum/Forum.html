@@ -1,0 +1,55 @@
+<div ng-controller="ForumController" ng-init="getForumList()">
+	<div id="forum-menu" class="d-flex justify-content-between">
+		<ul class="nav nav-pills" role="tablist">
+			<li class="nav-item sub-nav-item"><a class="nav-link small"
+				data-toggle="pill" onclick="forumMenuSwitch(this.id)"
+				id="tab-AllForums" href="">All Forums</a></li>
+			<li class="nav-item sub-nav-item"><a
+				class="nav-link small active" data-toggle="pill"
+				onclick="forumMenuSwitch(this.id)" id="tab-YourForums" href="">Your
+					Forums</a></li>
+		</ul>
+
+		<div>
+			<a href="#/addForum"><button class="btn btn-sm btn-success">
+					<i class="fas fa-plus mr-1"></i>Add
+				</button></a> <a ng-controller="ForumController"
+				ng-show="currentUser.role=='admin'" href="#/manageForum"><button
+					class="btn btn-sm btn-warning">
+					<i class="fas fa-wrench mr-1"></i>Manage
+				</button></a>
+		</div>
+	</div>
+	<div id="tabPane-AllForums" class="bg-block rounded"
+		style="display: none;">
+		<ol>
+			<li ng-repeat="forum in forumList" ng-show="forum.status=='A'"><a
+				ng-click="showForum(forum.forumId)" href="#/showForum">{{forum.forumTitle}}</a></li>
+		</ol>
+	</div>
+
+	<div id="tabPane-YourForums" class="bg-block rounded">
+		<div class="table-responsive">
+			<table class="table" style="margin-bottom: unset;">
+				<tr>
+					<th>Forum Title</th>
+					<th>Created on</th>
+					<th>Status</th>
+					<th></th>
+				</tr>
+				<tr ng-repeat="forum in forumList"
+					ng-show="forum.username==currentUser.username">
+					<td><a ng-click="showForum(forum.forumId)" href="#/showForum">{{forum.forumTitle}}</a></td>
+					<td>{{forum.createdDate}}</td>
+					<td><span ng-show="forum.status=='A'">Approved</span> <span
+						ng-show="forum.status=='R'">Rejected</span></td>
+					<td><a href="#/editForum?id={{forum.forumId}}"><i
+							class="fas fa-edit mr-1" title="Edit" style="color: #343a40;"></i></a><a
+						href="" ng-click="deleteForum(forum.forumId)"><i
+							class="fas fa-trash-alt mr-1" title="Delete"
+							style="color: #343a40;"></i></a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

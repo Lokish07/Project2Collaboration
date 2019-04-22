@@ -27,7 +27,7 @@ public class BlogDAOTestCase {
 	public static void executeFirst() {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
 		context.scan("com.coll");
-		context.refresh();
+		//context.refresh();
 		blogDAO = (BlogDAO) context.getBean("blogDAO");
 	}
 

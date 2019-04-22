@@ -1,0 +1,24 @@
+<div ng-controller="ForumController" ng-init="getForumList()">
+	<table>
+		<tr>
+			<th>Forum Id</th>
+			<th>Forum name</th>
+			<th>Created by</th>
+			<th>Created on</th>
+			<th>Approve / Reject</th>
+			<th>Delete forum</th>
+		</tr>
+		<tr ng-repeat="forum in forumList">
+			<td>{{forum.forumId}}</td>
+			<td>{{forum.forumTitle}}</td>
+			<td>{{forum.username}}</td>
+			<td>{{forum.createdDate}}</td>
+			<td><input type="button" value="Approve"
+				ng-hide="forum.status=='A'" ng-click="approveForum(forum.forumId)" />
+				<input type="button" value="Reject" ng-hide="forum.status=='R'"
+				ng-click="rejectForum(forum.forumId)" /></td>
+			<td><input type="button" value="Detete"
+				ng-click="deleteForum(forum.forumId)" /></td>
+		</tr>
+	</table>
+</div>

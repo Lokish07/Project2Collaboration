@@ -21,6 +21,7 @@ import com.coll.model.Forum;
 import com.coll.model.ForumComment;
 import com.coll.model.Friend;
 import com.coll.model.Job;
+import com.coll.model.ProfilePic;
 import com.coll.model.UserDetail;
 
 @Configuration
@@ -42,7 +43,7 @@ public class DbConfig {
 	@Bean(name = "sessionFactory")
 	public SessionFactory getSessionFactory() {
 		Properties hibernateProp = new Properties();
-		hibernateProp.put("hibernate.hbmddl2.auto", "update");
+		hibernateProp.put("hibernate.hbm2ddl.auto", "update");
 		hibernateProp.put("hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
 
 		LocalSessionFactoryBuilder factoryBuilder = new LocalSessionFactoryBuilder(getDataSource());
@@ -56,7 +57,7 @@ public class DbConfig {
 		factoryBuilder.addAnnotatedClass(ForumComment.class);
 		factoryBuilder.addAnnotatedClass(BlogLike.class);
 		factoryBuilder.addAnnotatedClass(BlogDislike.class);
-		//factoryBuilder.addAnnotatedClass(ProfilePic.class);
+		factoryBuilder.addAnnotatedClass(ProfilePic.class);
 		factoryBuilder.addAnnotatedClass(Friend.class);
 
 		

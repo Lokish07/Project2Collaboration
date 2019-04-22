@@ -42,7 +42,7 @@ myApp.controller("UserController", function($scope, $http, $location, $rootScope
 			$http.get('http://localhost:' + location.port + '/middleware/getUser/' + $scope.user.username).then(function(response) {
 				$rootScope.currentUser = response.data;
 				$cookieStore.put('userDetails', $rootScope.currentUser);
-				window.location.href = "http://localhost:" + location.port + "/front/index2.html#/userHome";
+				window.location.href = "http://localhost:" + location.port + "/frontend/index2.html#/userHome";
 			});
 		});
 	};
@@ -51,7 +51,7 @@ myApp.controller("UserController", function($scope, $http, $location, $rootScope
 		delete $rootScope.currentUser;
 		$cookieStore.remove('userDetails');
 		console.log("logout successful.");
-		window.location.href = "http://localhost:" + location.port + "/front/";
+		window.location.href = "http://localhost:" + location.port + "/frontend/";
 	};
 
 });

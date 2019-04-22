@@ -23,7 +23,7 @@ public class BlogCommentDAOTestCase {
 		blogCommentDAO = (BlogCommentDAO) context.getBean("blogCommentDAO");
 	}
 	
-	//@Ignore
+	@Ignore
 	@Test
 	public void addBlogCommentTest() {
 		BlogComment blogComment = new BlogComment();
