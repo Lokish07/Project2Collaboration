@@ -79,6 +79,7 @@ myApp.controller("UserHomeController", function($scope, $http, $location, $rootS
 													$scope.newsFeedNextItems.push(item);
 												});
 											}
+											else if($scope.newsFeedItems.length < 10)
 												
 											// get first and last name of user
 											// of each item

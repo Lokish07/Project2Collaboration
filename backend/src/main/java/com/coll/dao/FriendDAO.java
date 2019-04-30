@@ -6,7 +6,7 @@ import com.coll.model.Friend;
 import com.coll.model.UserDetail;
 
 public interface FriendDAO {
-	// public List<Friend> getFriendList(String username);
+	//public List<Friend> getFriendList(String username);
 	public List<UserDetail> getFriendList(String username);
 
 	public List<Friend> getPendingFriends(String username);

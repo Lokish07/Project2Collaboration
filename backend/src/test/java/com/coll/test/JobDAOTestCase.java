@@ -23,7 +23,7 @@ public class JobDAOTestCase {
 		jobDAO = (JobDAO) context.getBean("jobDAO");
 	}
 
-	@Ignore
+	
 	@Test
 	public void addJobTest() {
 		Job job = new Job();

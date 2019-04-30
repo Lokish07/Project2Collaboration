@@ -1,11 +1,11 @@
 <div ng-controller="UserController">
-	<img ng-hide="profilePic==''" src="{{prifilePicUrl}}" />
+	<img ng-hide="profilePic==''" src="{{profilePicUrl}}" />
 	<table>
 		<tr>
 			<td><p ng-show="profilePic==''">Add</p>
 				<p ng-hide="profilePic==''">Update</p></td>
 			<td><form method="post"
-					action="/middleware/addUpdateProfilePic"
+					action="/middleware/addProfilePic"
 					enctype="multipart/form-data">
 					<input type="file" name="profilePic" /> <input type="submit"
 						value="Upload" />

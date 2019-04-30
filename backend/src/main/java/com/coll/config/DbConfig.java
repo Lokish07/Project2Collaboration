@@ -60,7 +60,9 @@ public class DbConfig {
 		factoryBuilder.addAnnotatedClass(ProfilePic.class);
 		factoryBuilder.addAnnotatedClass(Friend.class);
 
-		
+	
+
+
 
 		SessionFactory sessionFactory = factoryBuilder.buildSessionFactory();
 		System.out.println("---SessionFactory created---");

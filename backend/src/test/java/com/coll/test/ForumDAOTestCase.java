@@ -25,7 +25,7 @@ public class ForumDAOTestCase {
 		forumDAO = (ForumDAO) context.getBean("forumDAO");
 	}
 	
-	@Ignore
+
 	@Test
 	public void addForumTest()
 	{

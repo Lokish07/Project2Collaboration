@@ -27,12 +27,12 @@ public class FriendDAOTestCase {
 		friendDAO = (FriendDAO) context.getBean("friendDAO");
 	}
 
-	@Ignore
+	//@Ignore
 	@Test
 	public void sendFriendRequestTest() {
 		Friend friend = new Friend();
-		friend.setUsername("f6");
-		friend.setFriendUsername("f2");
+		friend.setUsername("Lokish");
+		friend.setFriendUsername("marry");
 		assertTrue("Problem adding friend req", friendDAO.sendFriendReq(friend));
 	}
 
@@ -48,7 +48,7 @@ public class FriendDAOTestCase {
 		assertTrue("Problem deleting friend req", friendDAO.deleteFriendReq(116));
 	}
 	
-	//@Ignore
+	@Ignore
 	@Test
 	public void unfriendTest() {
 		assertTrue("Problem unfriending", friendDAO.unfriend("f1","f2"));

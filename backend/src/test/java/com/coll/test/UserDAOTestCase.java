@@ -23,18 +23,18 @@ public class UserDAOTestCase {
 		userDAO = (UserDAO) context.getBean("userDAO");
 	}
 
-	@Ignore
+	//@Ignore
 	@Test
 	public void addUserTest() {
 		UserDetail user = new UserDetail();
-		user.setUsername("admin");
-		user.setPassword("admin123");
-		user.setFirstName("xxxxx");
-		user.setLastName("xxxxx");
-		user.setEmail("email@gmail.com");
+		user.setUsername("john");
+		user.setPassword("john123");
+		user.setFirstName("john");
+		user.setLastName("cena");
+		user.setEmail("johncena@wwe.com");
 		user.setRole("student");
 		user.setIsOnline("Off");
-		user.setStatus("NA");
+		user.setStatus("A");
 		assertTrue("Problem adding user", userDAO.addUser(user));
 	}
 
@@ -45,7 +45,7 @@ public class UserDAOTestCase {
 		assertTrue("Problem deleting user", userDAO.deleteUser(user));
 	}
 
-	//@Ignore
+	@Ignore
 	@Test
 	public void updateUserTest() {
 		UserDetail user = userDAO.getUser("admin");
@@ -56,14 +56,14 @@ public class UserDAOTestCase {
 	@Ignore
 	@Test
 	public void approveUserTest() {
-		UserDetail user = userDAO.getUser("clements");
+		UserDetail user = userDAO.getUser("lokish");
 		assertTrue("Problem approving user", userDAO.approveUser(user));
 	}
 
 	@Ignore
 	@Test
 	public void rejectUserTest() {
-		UserDetail user = userDAO.getUser("clements12");
+		UserDetail user = userDAO.getUser("lokish12");
 		assertTrue("Problem rejecting user", userDAO.rejectUser(user));
 	}
 
