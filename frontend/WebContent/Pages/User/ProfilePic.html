@@ -4,8 +4,8 @@
 		<tr>
 			<td><p ng-show="profilePic==''">Add</p>
 				<p ng-hide="profilePic==''">Update</p></td>
-			<td><form method="post"
-					action="/middleware/addProfilePic"
+			<td><form method="post" 
+					action="/middleware/addUpdateProfilePic"
 					enctype="multipart/form-data">
 					<input type="file" name="profilePic" /> <input type="submit"
 						value="Upload" />
