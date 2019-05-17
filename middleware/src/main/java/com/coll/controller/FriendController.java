@@ -91,4 +91,14 @@ public class FriendController {
 			return null;
 	}
 
+	@GetMapping(value = "/checkIfFriends/{username}/{friendUsername}")
+	public String getSuggestedFriendList(@PathVariable("username") String username,
+			@PathVariable("friendUsername") String friendUsername) {
+		Friend friend = friendDAO.checkIfFriends(username, friendUsername, true);
+		if (friend != null) {
+			Gson gson = new Gson();
+			return gson.toJson(friend);
+		} else
+			return null;
+	}
 }
