@@ -2,6 +2,9 @@ package com.coll.config;
 
 import java.util.Properties;
 
+
+
+
 import javax.sql.DataSource;
 
 import org.hibernate.SessionFactory;
@@ -22,6 +25,7 @@ import com.coll.model.ForumComment;
 import com.coll.model.Friend;
 import com.coll.model.Job;
 import com.coll.model.ProfilePic;
+
 import com.coll.model.UserDetail;
 
 @Configuration
