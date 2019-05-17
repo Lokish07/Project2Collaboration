@@ -24,8 +24,7 @@ public class ProfilePicController {
 	ProfilePicDAO profilePicDAO;
 
 	@PostMapping(value = "/addProfilePic")
-	public void addProfilePic(@RequestParam(value="profilePic") CommonsMultipartFile file, HttpSession session) 
-	{
+	public void addProfilePic(@RequestParam(value = "profilePic") CommonsMultipartFile file, HttpSession session) {
 		UserDetail user = (UserDetail) session.getAttribute("userDetail");
 		if (user == null)
 			System.out.println("user is null");
@@ -41,6 +40,7 @@ public class ProfilePicController {
 				profilePic.setUsername(user.getUsername());
 				profilePic.setImage(file.getBytes());
 				profilePicDAO.addProfilePic(profilePic);
+				System.out.println("Addeded profilePic");
 			}
 		}
 	}

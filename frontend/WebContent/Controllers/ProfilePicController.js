@@ -9,8 +9,7 @@ var fileChanged = function(event) {
 
 };
 
-myApp.controller("ProfilePicController", function($scope, $http, $location, $rootScope, $cookieStore) 
-		{
+myApp.controller("ProfilePicController", function($scope, $http, $location, $rootScope, $cookieStore) {
 
 	// checking if profile pic exists
 	$http.get('http://localhost:' + location.port + '/middleware/getProfilePic/' + $rootScope.currentUser.username).then(function(response) {

@@ -4,8 +4,7 @@ import java.util.List;
 
 import com.coll.model.Notification;
 
-public interface NotificationDAO
-{
+public interface NotificationDAO {
 	public boolean addNotification(Notification notification);
 
 	public boolean deleteNotification(Notification notification);

@@ -21,10 +21,13 @@ public class WebResolver {
 		return resolver;
 	}
 	
-	@Bean(name = "multipartResolver")
-	public CommonsMultipartResolver getMultipartResolver() {
-		CommonsMultipartResolver resolver = new CommonsMultipartResolver();
+	@Bean(name="multipartResolver")
+	public CommonsMultipartResolver getMultipartResolver()
+	{
+		CommonsMultipartResolver resolver=new CommonsMultipartResolver();
 		resolver.setMaxUploadSize(100000);
+		System.out.println("==Multipart Resolver Bean==");
 		return resolver;
 	}
+
 }
