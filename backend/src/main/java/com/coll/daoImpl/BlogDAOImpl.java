@@ -2,8 +2,6 @@ package com.coll.daoImpl;
 
 import java.util.List;
 
-import javax.persistence.OrderBy;
-
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -14,7 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.coll.dao.BlogDAO;
 import com.coll.model.Blog;
 import com.coll.model.Friend;
-import com.coll.model.UserDetail;
 
 @Repository("blogDAO")
 @Transactional
@@ -79,7 +76,6 @@ public class BlogDAOImpl implements BlogDAO {
 	@Override
 	public List<Blog> getBlogList() {
 		Session session = sessionFactory.openSession();
-		
 		Query query = session.createQuery("from Blog");
 		List<Blog> blogList = query.list();
 		session.close();
@@ -169,5 +165,18 @@ public class BlogDAOImpl implements BlogDAO {
 		} catch (Exception e) {
 			return false;
 		}
+	}
+
+	@Override
+	public List<Blog> blogSearch(String queryText) {
+		String queryTextLower = queryText.toLowerCase();
+		String queryTextUpper = Character.toUpperCase(queryTextLower.charAt(0)) + queryTextLower.substring(1);
+		Session session = sessionFactory.openSession();
+		Query query = session.createQuery("from Blog where blogTitle LIKE '%" + queryTextLower
+				+ "%' or blogTitle LIKE '%" + queryTextUpper + "%' or blogContent LIKE '%" + queryTextLower
+				+ "%' or blogContent LIKE '%" + queryTextUpper + "%'");
+		List<Blog> blogList = query.list();
+		session.close();
+		return blogList;
 	}
 }
