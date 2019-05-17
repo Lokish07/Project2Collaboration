@@ -5,8 +5,7 @@ import java.util.List;
 import com.coll.model.BlogDislike;
 import com.coll.model.BlogLike;
 
-public interface BlogLikeDislikeDAO 
-{
+public interface BlogLikeDislikeDAO {
 
 	public boolean addBlogLike(BlogLike like);
 
