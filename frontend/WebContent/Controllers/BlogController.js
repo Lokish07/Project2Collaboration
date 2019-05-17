@@ -233,7 +233,7 @@ myApp.controller("BlogController", function($scope, $http, $location, $rootScope
 				$http.get('http://localhost:' + location.port + '/middleware/incrementDislike/' + $cookieStore.get("showBlogId"));
 				// check if there is an existing
 				// like by user
-				$http.get('http://localhost:' + location.port + '/BlogBookMiddleware/getBlogLike/' + $cookieStore.get("showBlogId") + '/' + $rootScope.currentUser.username).then(function(response) {
+				$http.get('http://localhost:' + location.port + '/middleware/getBlogLike/' + $cookieStore.get("showBlogId") + '/' + $rootScope.currentUser.username).then(function(response) {
 					var existingLike = response.data;
 					if (existingLike) {
 						// delete
