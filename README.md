@@ -1,6 +1,6 @@
 <h2>Project2Collaboration (A Collaboration Web Application)</h2>
 <h4>Overview</h4>
-<p>BlogBook is a platform for sharing thoughts and ideas to start a discussion. This is achieved through the creation of blogs and forums. When a user creates a blog or forum, other users can share their thoughts by commenting on them. Users can also post job opportunities.</p>
+<p>Project2Collaboration is a platform for sharing thoughts and ideas to start a discussion. This is achieved through the creation of blogs and forums. When a user creates a blog or forum, other users can share their thoughts by commenting on them. Users can also post job opportunities.</p>
 <h4>Technologies Used</h4>
 <ul>
 <li>Java</li>
